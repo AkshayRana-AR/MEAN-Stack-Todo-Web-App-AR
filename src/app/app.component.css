@@ -1,0 +1,22 @@
+header
+{
+    top: 0;
+    width: 100%;
+    background-color: rgb(188, 238, 238);
+    text-align: center;
+    
+}
+footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(188, 238, 238);
+    text-align:center;
+}
+*
+{
+    margin:0 ;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}

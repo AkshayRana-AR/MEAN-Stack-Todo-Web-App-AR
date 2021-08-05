@@ -1,0 +1,59 @@
+.list-table
+{
+    border-collapse: collapse;
+    width:100%;
+    margin-top: 30px;
+    text-align: center;
+    background-color:rgb(224, 248, 248);
+}
+.add-button
+{
+    background-color: rgb(86, 216, 216);
+    transform: scale(0.8);
+}
+.icon-display {
+    transform: scale(1.5);
+ }
+ .edit-delete-button
+{
+    background-color: rgb(86, 216, 216);
+    transform: scale(0.8);
+}
+
+.no-todos
+{
+    position: absolute;
+    vertical-align: middle;
+text-align: center;
+    width: 100%;
+    height: 90%;
+}
+
+.no-todos-add-button
+{
+    background-color: rgb(86, 216, 216);
+}
+
+
+.mat-table{
+    width: 100%;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color:rgb(224, 248, 248);
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+.mat-cell{
+    border: 1px solid black;
+    font-size: medium;
+  }
+
+  .mat-header-cell{
+    border: 1px solid black;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+
+  }
+

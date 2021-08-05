@@ -1,0 +1,9 @@
+<h3>{{data.dialogTitle}}</h3>
+<p>
+  {{data.dialogMessage}}
+</p>
+
+<div class="dialog-button">
+  <button mat-raised-button class="dialog-font confirm-button" (click)="dialogRef.close(true)">Confirm</button>
+  <button mat-raised-button class="dialog-font" (click)="dialogRef.close(false)">Cancel</button>
+</div>

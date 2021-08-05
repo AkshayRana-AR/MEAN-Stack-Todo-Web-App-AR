@@ -1,0 +1,79 @@
+<div *ngIf="dataSource.length==0" class="no-todos">
+  <h1>No todos To display! Add some..</h1>
+  <a routerLink="/addTask">
+    <button mat-mini-fab class="no-todos-add-button">
+      <mat-icon class="icon-display">add</mat-icon>
+    </button>
+  </a>
+</div>
+
+<br />
+
+<div *ngIf="dataSource.length>0">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Add button -->
+    <ng-container matColumnDef="add-button-row">
+      <th mat-header-cell *matHeaderCellDef [attr.colspan]="6">
+        <a routerLink="/addTask">
+          <button mat-mini-fab class="add-button">
+            <mat-icon class="icon-display">add</mat-icon>
+          </button>
+        </a>
+      </th>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title </th>
+      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <!-- EndDate Column -->
+    <ng-container matColumnDef="endDate">
+      <th mat-header-cell *matHeaderCellDef> EndDate </th>
+      <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+    </ng-container>
+
+    <!-- Edit Column -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef colspan="2"> Action </th>
+      <td mat-cell *matCellDef="let element" colspan="1">
+        <button mat-mini-fab class="edit-delete-button" (click)="editTask(element._id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!-- Delete Column -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef [ngStyle]="{'display': 'none'}"> Hide </th>
+      <td mat-cell *matCellDef="let element" colspan="1">
+        <button mat-mini-fab class="edit-delete-button" (click)="deleteTask(element._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <!--Rendering-->
+    <tr mat-header-row *matHeaderRowDef="['add-button-row']"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

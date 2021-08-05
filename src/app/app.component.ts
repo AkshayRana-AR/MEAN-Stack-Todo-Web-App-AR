@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo-web-app-mean-stack-ar';
+  title = 'Todo Web App MEAN stack';
 }

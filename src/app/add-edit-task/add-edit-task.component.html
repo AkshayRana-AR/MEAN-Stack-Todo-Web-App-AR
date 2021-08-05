@@ -1,0 +1,75 @@
+<form [formGroup]="addTaskForm" (ngSubmit)="submitTask()" #ngForm="ngForm">
+    <table class="add-task-table" border="0" align="center" width=100%>
+        <tr>
+            <td style="visibility: hidden;">Title</td>
+            <td>
+                <mat-form-field class="input-field" style="width:90%; margin-top: 10px; " appearance="fill">
+                    <mat-label>Title</mat-label>
+                    <input matInput type="text" formControlName="title" placeholder="Ex. Will go to buy grocery">
+                </mat-form-field>
+                <small>
+                    <span class="span-message" *ngIf="addTaskForm.controls.title.invalid && (ngForm.submitted  || addTaskForm.controls.title.touched)">
+                        *required
+                    </span>
+                </small>
+            </td>
+
+            <td>
+                <button mat-mini-fab class="cancel-button" type="button" (click)="cancelButton()">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td style="visibility: hidden;">Description</td>
+            <td>
+                <mat-form-field class="input-field" minRows="5" style="width:90%" appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput rows="3" formControlName="description" placeholder="Enter description here">
+                    </textarea>
+                </mat-form-field>
+                <small>
+                    <span class="span-message" *ngIf="addTaskForm.controls.description.invalid && (ngForm.submitted || addTaskForm.controls.description.touched)">
+                        *required
+                    </span>
+                </small>
+            </td>
+        </tr>
+        <tr>
+            <td style="visibility: hidden;">endDate</td>
+            <td>
+                <mat-form-field class="input-field" style="width:90%" appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" [min]='minDate' formControlName="endDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <small>
+                    <span class="span-message" *ngIf="addTaskForm.controls.endDate.invalid  && (ngForm.submitted|| addTaskForm.controls.endDate.touched)">*invalid
+                        date
+                    </span>
+                </small>
+            </td>
+        </tr>
+        <tr>
+            <td style="visibility: hidden;">Status</td>
+            <td>
+                <mat-form-field class="input-field" appearance="fill" style="width:90%;">
+                    <mat-label>Status</mat-label>
+                    <select matNativeControl required formControlName="status">
+                        <option value="Todo">To do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </mat-form-field>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <button mat-raised-button id="submitbtn" class="input-field submit-button" type="submit">
+                    <b>Submit</b>
+                </button>
+            </td>
+        </tr>
+    </table>
+</form>

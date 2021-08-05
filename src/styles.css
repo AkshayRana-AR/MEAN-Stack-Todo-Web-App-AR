@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Comic Sans MS', cursive, sans-serif; }
+
+.blue-snackbar {
+  color:black;
+   background-color: rgb(188, 238, 238);
+   font-family: 'Comic Sans MS', cursive, sans-serif;
+  }
+
+  .mat-snack-bar-container {
+    text-align: center;
+}
+
+.mat-simple-snackbar {
+    display: inline-block !important;
+    font-family: 'Comic Sans MS', cursive, sans-serif !important ;
+    font-size: medium !important;
+}

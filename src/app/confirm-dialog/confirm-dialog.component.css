@@ -1,0 +1,13 @@
+.dialog-button{
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    float:right;margin:10px;
+}
+.dialog-font
+{
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: rgb(86, 216, 216);
+}
+.confirm-button
+{
+    margin:0px 10px;
+}
